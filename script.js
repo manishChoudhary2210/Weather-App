@@ -13,7 +13,7 @@ const weather_body = document.querySelector('.weather-body');
 
 async function checkWeather(city) {
     const api_key = "b50a3d4c313b1460710c77a155ac654b";
-    var geoCodingApi = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${api_key}`;
+    var geoCodingApi = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${api_key}`;
     const geoData = await fetch(geoCodingApi).then(response => response.json());
     
     if (geoData.length === 0) {
