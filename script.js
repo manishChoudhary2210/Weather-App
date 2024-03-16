@@ -13,7 +13,7 @@ const weather_body = document.querySelector('.weather-body');
 
 async function checkWeather(city) {
     const api_key = "b50a3d4c313b1460710c77a155ac654b";
-    var geoCodingApi = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${api_key}`;
+    var geoCodingApi = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${api_key}`;
     const geoData = await fetch(geoCodingApi).then(response => response.json());
     
     if (geoData.length === 0) {
@@ -26,7 +26,7 @@ async function checkWeather(city) {
     const latitude = geoData[0].lat;
     const longitude = geoData[0].lon;
 
-    const url = `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${api_key}`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${api_key}`;
     const weather_data = await fetch(url).then(response => response.json());
 
     if (weather_data.cod === `404`) {
